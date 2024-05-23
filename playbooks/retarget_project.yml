@@ -1,0 +1,16 @@
+---
+- name: Update Project Environmental Variable
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  no_log: false
+  vars_prompt:
+    - name: target_project
+      prompt: What is the target project?
+      private: false
+  tasks:
+    - name: Update the project environmental variable
+      ansible.builtin.lineinfile:
+        path: ~/.bashrc
+        regexp: '^export PROJECT_SOURCE='
+        line: export PROJECT_SOURCE='{{ target_project }}'

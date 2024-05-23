@@ -1,0 +1,10 @@
+schemaVersion: 2.2.0
+metadata:
+  name: omf-devspaces-poc
+parent:
+  uri: https://raw.githubusercontent.com/ahill-omf/omf-parent/main/devfile.yaml
+projects:
+  - name: demo-child-devfile
+    git:
+      remotes:
+        origin: 'https://github.com/ahill-omf/demo-child-devfile.git'
